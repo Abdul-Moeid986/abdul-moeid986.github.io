@@ -160,10 +160,28 @@
   @keyframes blink{50%{opacity:0;}}
 
   /* ===== CREDIBILITY STRIP ===== */
-  .cred-strip{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:22px 0; background:var(--panel);}
-  .cred-strip .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px;}
-  .cred-item{display:flex; align-items:center; gap:10px; font-size:13.5px; color:var(--text-dim); font-family:'JetBrains Mono';}
-  .cred-item .b-num{color:var(--teal); font-weight:700; font-size:16px;}
+  .cred-strip{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:30px 0; background:var(--panel);}
+  .cred-strip .wrap{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+  }
+  .cred-item{
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+    gap:8px; padding:4px 22px; border-left:1px solid var(--line);
+  }
+  .cred-item:first-child{border-left:none;}
+  .cred-item .b-num{
+    color:var(--teal); font-weight:700; font-size:26px; font-family:'JetBrains Mono'; line-height:1;
+  }
+  .cred-item .b-label{
+    font-size:12.5px; color:var(--text-dim); font-family:'JetBrains Mono'; line-height:1.5; max-width:170px;
+  }
+
+  @media (max-width:760px){
+    .cred-strip .wrap{grid-template-columns:repeat(2, 1fr); row-gap:24px;}
+    .cred-item:nth-child(3){border-left:1px solid var(--line);}
+    .cred-item:nth-child(odd){border-left:none;}
+  }
 
   /* reveal on scroll */
   .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
@@ -332,10 +350,10 @@
 
 <div class="cred-strip">
   <div class="wrap">
-    <div class="cred-item"><span class="b-num">2</span> complete end-to-end ML projects</div>
-    <div class="cred-item"><span class="b-num">1</span> full-stack AI assistant shipped (chat + voice + docs)</div>
-    <div class="cred-item"><span class="b-num">0.86</span> R² on salary prediction model</div>
-    <div class="cred-item"><span class="b-num">3</span> professional certifications</div>
+    <div class="cred-item"><span class="b-num">2</span><span class="b-label">Complete end-to-end<br>ML projects</span></div>
+    <div class="cred-item"><span class="b-num">1</span><span class="b-label">Full-stack AI assistant<br>(chat + voice + docs)</span></div>
+    <div class="cred-item"><span class="b-num">0.86</span><span class="b-label">R² on salary<br>prediction model</span></div>
+    <div class="cred-item"><span class="b-num">3</span><span class="b-label">Professional<br>certifications</span></div>
   </div>
 </div>
 
