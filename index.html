@@ -204,6 +204,14 @@
   .status-pill .dot{width:6px; height:6px; border-radius:50%; background:var(--teal); box-shadow:0 0 5px var(--teal); animation:pulse 2s infinite;}
   .status-pill.build .dot{background:var(--amber); box-shadow:0 0 5px var(--amber);}
   .p-desc{color:var(--text-dim); font-size:14.5px; margin-bottom:16px; max-width:640px;}
+  .p-block{margin-bottom:14px;}
+  .p-block:last-of-type{margin-bottom:0;}
+  .p-block-label{
+    font-family:'JetBrains Mono'; font-size:11px; text-transform:uppercase; letter-spacing:1.2px;
+    color:var(--teal); margin-bottom:5px;
+  }
+  .p-block-text{font-size:14.5px; color:var(--text-dim); max-width:660px; line-height:1.65;}
+  .p-block-text strong{color:var(--text); font-weight:600;}
   .p-meta{display:grid; grid-template-columns:repeat(auto-fit, minmax(160px,1fr)); gap:14px; margin-top:16px; padding-top:16px; border-top:1px solid var(--line);}
   .p-meta-item .k{font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--text-dim); margin-bottom:6px; font-family:'JetBrains Mono';}
   .p-meta-item .v{font-size:13.5px;}
@@ -365,22 +373,21 @@
           <div class="p-name">Omni Mind — AI Assistant</div>
           <div class="status-pill"><span class="dot"></span> flagship</div>
         </div>
-        <div class="p-desc">A multi-modal AI assistant built in VS Code that functions as both a chatbot and a voice assistant. It can read uploaded documents and answer questions directly from their content, combining conversational AI with document intelligence and intelligent task routing.</div>
-        <div class="p-meta">
-          <div class="p-meta-item">
-            <div class="k">Capabilities</div>
-            <div class="v">Text chat · voice interaction · document Q&A</div>
-          </div>
-          <div class="p-meta-item">
-            <div class="k">Built with</div>
-            <div class="v">Python, LLM integration, speech I/O</div>
-          </div>
-          <div class="p-meta-item">
-            <div class="k">Status</div>
-            <div class="v">Working prototype, built end-to-end in VS Code</div>
-          </div>
+
+        <div class="p-block">
+          <div class="p-block-label">Problem</div>
+          <div class="p-block-text">Most AI assistants are single-purpose — a chatbot, or a voice tool, or a document reader, rarely all three working together. Users end up switching between apps to get simple tasks done.</div>
         </div>
-        <div class="tag-row" style="margin-top:16px;">
+        <div class="p-block">
+          <div class="p-block-label">Approach</div>
+          <div class="p-block-text">Built a single assistant in VS Code that unifies three modes of interaction: natural-language chat, voice input/output, and document-grounded Q&A — so it can read an uploaded file and answer questions directly from its content, in addition to routing general tasks intelligently.</div>
+        </div>
+        <div class="p-block">
+          <div class="p-block-label">Outcome</div>
+          <div class="p-block-text">A working, end-to-end prototype demonstrating multi-modal AI integration — combining conversational AI, speech processing, and retrieval-based document understanding in one system.</div>
+        </div>
+
+        <div class="tag-row" style="margin-top:18px;">
           <span class="tag">multi-agent</span>
           <span class="tag">voice AI</span>
           <span class="tag">RAG / doc Q&A</span>
@@ -393,14 +400,21 @@
           <div class="p-name">ML Salary Prediction Model</div>
           <div class="status-pill"><span class="dot"></span> complete</div>
         </div>
-        <div class="p-desc">A complete regression pipeline that predicts employee salary from age, years of experience, education level, and job position. Covers the full workflow: encoding categorical features, train/test splitting, model training, evaluation, and exporting a deployable model file.</div>
-        <div class="p-meta">
-          <div class="p-meta-item"><div class="k">Model</div><div class="v">Random Forest Regressor</div></div>
-          <div class="p-meta-item"><div class="k">R² Score</div><div class="v">0.86</div></div>
-          <div class="p-meta-item"><div class="k">Mean Absolute Error</div><div class="v">~Rs 20,957</div></div>
-          <div class="p-meta-item"><div class="k">Pipeline</div><div class="v">Label encoding → train/test split → RF training → evaluation → joblib export</div></div>
+
+        <div class="p-block">
+          <div class="p-block-label">Problem</div>
+          <div class="p-block-text">Estimating fair salary from a candidate's profile is a common but often inconsistent decision — done manually, it varies person to person. A data-driven model can standardize the estimate based on measurable factors.</div>
         </div>
-        <div class="tag-row" style="margin-top:16px;">
+        <div class="p-block">
+          <div class="p-block-label">Approach</div>
+          <div class="p-block-text">Built a full regression pipeline: encoded categorical fields (education level, job position) into numeric form, split the data into training and test sets, and trained a Random Forest Regressor on age, experience, education, and position to predict salary.</div>
+        </div>
+        <div class="p-block">
+          <div class="p-block-label">Result</div>
+          <div class="p-block-text">The model reached an <strong>R² of 0.86</strong> on test data — meaning it explains roughly 86% of the variation in salary using just these four factors — with a mean absolute error of about <strong>Rs 21,000</strong>. Built and validated on a proof-of-concept dataset; the pipeline is designed to scale directly to a larger real-world salary dataset without any structural changes.</div>
+        </div>
+
+        <div class="tag-row" style="margin-top:18px;">
           <span class="tag">regression</span>
           <span class="tag">scikit-learn</span>
           <span class="tag">pandas</span>
